@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center"><%= @customer.FirstName %>'s Invoices</h1>
+<%= render 'invoices', obj: @customer_invoice %>
+<div align="center">
+  <%= will_paginate @customer_invoice%>
+</div>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

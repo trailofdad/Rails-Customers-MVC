@@ -1,0 +1,31 @@
+<% model_class = Invoice %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:InvoiceId) %></th>
+    <th><%= model_class.human_attribute_name(:CustomerId) %></th>
+    <th><%= model_class.human_attribute_name(:InvoiceDate) %></th>
+    <th><%= model_class.human_attribute_name(:BillingAddress) %></th>
+    <th><%= model_class.human_attribute_name(:BillingCity) %></th>
+    <th><%= model_class.human_attribute_name(:BillingState) %></th>
+    <th><%= model_class.human_attribute_name(:BillingCountry) %></th>
+    <th><%= model_class.human_attribute_name(:BillingPostalCode) %></th>
+    <th><%= model_class.human_attribute_name(:Total) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @customer_invoice.each do |invoice| %>
+      <tr>
+        <td><%= invoice.InvoiceId %></td>
+        <td><%= invoice.CustomerId %></td>
+        <td><%= invoice.InvoiceDate %></td>
+        <td><%= invoice.BillingAddress %></td>
+        <td><%= invoice.BillingCity %></td>
+        <td><%= invoice.BillingState %></td>
+        <td><%= invoice.BillingCountry %></td>
+        <td><%= invoice.BillingPostalCode %></td>
+        <td><%= invoice.Total %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
